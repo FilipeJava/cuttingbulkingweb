@@ -1,5 +1,7 @@
 'use server'
 
+import { revalidatePath } from "next/cache"
+
 export async function create(formData){
 const url = "http://localhost:8080/bulkingcutting/api/registrocalorico/"
 
@@ -19,6 +21,7 @@ const options = {
         return {message : "Erro ao cadastrar"}
     }
 
+    revalidatePath("/registro")
     return {message : "Registro efetuado"}
 }
 

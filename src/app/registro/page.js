@@ -6,7 +6,7 @@ import Button from '@/components/Button';
 
   const url = "http://localhost:8080/bulkingcutting/api/usuario/registro/1"
 
-  const response =  await fetch(url)
+  const response =  await fetch(url , {next:{revalidate :3600}})
  
   return response.json()
 }

@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import NavBar from "@/components/NavBar";
 import TextInput from "@/components/TextInput";
 import { useState } from "react";
+import {redirect} from 'next/navigation'
 
 
 
@@ -19,7 +20,8 @@ export default function FormRegistro() {
         setMessage(resp.message)
         return
        }
-       setMessage("Registro cadastrado")
+       redirect("/registro")
+
     }
 
     return (
