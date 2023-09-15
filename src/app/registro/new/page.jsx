@@ -33,7 +33,7 @@ export default function FormRegistro() {
 
             <h2>Registro Calorico</h2>
 
-            <form action={handleSubmit()}> 
+            <form action={handleSubmit}> 
             <TextInput name ="tipo" id= "tipo" label="tipo"/>
             <TextInput name ="descricao" id= "descricao" label="descricao"/>
             <TextInput name ="data" id= "data" label="data"/>
