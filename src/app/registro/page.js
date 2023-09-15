@@ -1,16 +1,8 @@
 import NavBar from '@/components/NavBar';
 import RegistroRow from './RegistroRow';
 import Button from '@/components/Button';
-
- async function getRegistros(){
-
-  const url = "http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/1"
-
-  const response =  await fetch(url , {next:{revalidate :3600}})
+import { getRegistros } from '@/actions/registro';
  
-  return response.json()
-}
-
 
 
 export default  async function Registro()  {
