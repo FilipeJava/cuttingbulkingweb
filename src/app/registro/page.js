@@ -4,7 +4,7 @@ import Button from '@/components/Button';
 
  async function getRegistros(){
 
-  const url = "http://localhost:8080/bulkingcutting/api/usuario/registro/1"
+  const url = "http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/1"
 
   const response =  await fetch(url , {next:{revalidate :3600}})
  

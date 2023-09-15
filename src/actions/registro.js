@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache"
 
 export async function create(formData){
-const url = "http://localhost:8080/bulkingcutting/api/registrocalorico/"
+const url = "http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/1"
 
 
 const options = {
