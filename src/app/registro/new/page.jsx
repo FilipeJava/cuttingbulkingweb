@@ -20,6 +20,7 @@ export default function FormRegistro() {
         setMessage(resp.message)
         return
        }
+       setMessage("registro inlcuido")
        redirect("/registro")
 
     }
