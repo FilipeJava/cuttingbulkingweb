@@ -27,6 +27,8 @@ const options = {
 
 export async function getRegistros(){
     await new Promise(r => setTimeout(r, 5000));
-    const response = await fetch("http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/1",  { next: { revalidate: 0 } })
+    const response = await fetch("http://bulkingcutting-production.up.railway.app/bulkingcutting/api/usuario/registro/1",  { next: { revalidate: 0 } })
     return response.json()
   }
+
+  ///bulkingcutting/api/usuario/
