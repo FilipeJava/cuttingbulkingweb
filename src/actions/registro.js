@@ -12,7 +12,7 @@ const options = {
     body: JSON.stringify(Object.fromEntries(formData))
 }
     const resp = fetch(url, options)
-    if ( (await resp).status !== 201){
+    if ( (await resp).status !== 200){
         return {message : "Erro ao cadastrar"}
     }
     revalidatePath("/registro")
