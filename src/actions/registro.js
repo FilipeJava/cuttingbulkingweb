@@ -2,17 +2,17 @@
 import { revalidatePath } from "next/cache"
 
 export async function create(formData){
-const url = "http://localhost:8080/bulkingcutting/api/registrocalorico/1"
+const url = "http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/1"
 
 const options = {
     method:"POST",
-    body: JSON.stringify(Object.fromEntries(formData)),
-    headers : {
+       headers : {
         "Content-Type": "application/json"
-    }
+    },
+    body: JSON.stringify(Object.fromEntries(formData))
 }
     const resp = fetch(url, options)
-    if ( (await resp).status !== 200){
+    if ( (await resp).status !== 201){
         return {message : "Erro ao cadastrar"}
     }
     revalidatePath("/registro")
@@ -21,12 +21,12 @@ const options = {
 
 export async function getRegistros(){
     await new Promise(r => setTimeout(r, 5000));
-    const response = await fetch("http://localhost:8080/bulkingcutting/api/usuario/registro/1",  { next: { revalidate: 0 } })
+    const response = await fetch("http://bulkingcutting-production.up.railway.app/bulkingcutting/api/usuario/registro/1",  { next: { revalidate: 0 } })
     return response.json()
 }
 
 export async function getRegistro(id){
-    const getUrl = "http://localhost:8080/bulkingcutting/api/registrocalorico/" + id
+    const getUrl = "http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/" + id
     const response = await fetch(getUrl)
 
     const json = await response.json()
@@ -39,7 +39,7 @@ export async function getRegistro(id){
 }
 
 export async function destroy(id){
-    const deleteUrl = "http://localhost:8080/bulkingcutting/api/registrocalorico/" + id
+    const deleteUrl = "http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/" + id
     
     const options = {
         method: "DELETE"
@@ -56,7 +56,7 @@ export async function destroy(id){
 }
 
 export async function update(registro){
-    const updateUrl = "http://localhost:8080/bulkingcutting/api/registrocalorico/" + registro.id
+    const updateUrl = "http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/" + registro.id
 
     const options = {
         method: "PUT",
