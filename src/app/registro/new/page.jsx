@@ -16,12 +16,15 @@ export default function FormRegistro() {
     async function handleSubmit(formData){
        const resp = await create(formData)
 
-       if (resp.message){
-        setMessage(resp.message)
+       if (resp.error){
+        setMessage(resp.error)
+     
         return
        }
        setMessage("registro inlcuido")
+
        redirect("/registro")
+       
 
     }
 
@@ -45,10 +48,11 @@ export default function FormRegistro() {
                 <Button element="salvar">Salvar</Button>
             </div>
 
-            <p>{message}</p>    
+             
 
             </form>
 
+            <p>{message}</p>  
 
             </main>
 

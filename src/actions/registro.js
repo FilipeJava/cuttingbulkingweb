@@ -14,10 +14,12 @@ const options = {
 }
     const resp = fetch(url, options)
     if ( (await resp).status !== 201){
-        return {message : "Erro ao cadastrar"}
+        const json = await resp.json()
+        const mensagens = json.reduce((str, erro) => str += ". " + erro.message, "")
+        return {error: "Erro ao cadastrar" + mensagens}
     }
     revalidatePath("/registro")
-    return {message : "Registro efetuado"}
+    return {ok: "Registro efetuado"}
 }
 
 export async function getRegistros(){
