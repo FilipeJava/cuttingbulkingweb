@@ -1,8 +1,9 @@
 'use server'
 import { revalidatePath } from "next/cache"
 
+//ajuste 
 export async function create(formData){
-const url = "http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/1"
+const url = "https://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/1"
 
 const options = {
     method:"POST",
@@ -21,12 +22,12 @@ const options = {
 
 export async function getRegistros(){
     await new Promise(r => setTimeout(r, 5000));
-    const response = await fetch("http://bulkingcutting-production.up.railway.app/bulkingcutting/api/usuario/registro/1",  { next: { revalidate: 0 } })
+    const response = await fetch("https://bulkingcutting-production.up.railway.app/bulkingcutting/api/usuario/registro/1",  { next: { revalidate: 0 } })
     return response.json()
 }
 
 export async function getRegistro(id){
-    const getUrl = "http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/" + id
+    const getUrl = "https://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/" + id
     const response = await fetch(getUrl)
 
     const json = await response.json()
@@ -39,7 +40,7 @@ export async function getRegistro(id){
 }
 
 export async function destroy(id){
-    const deleteUrl = "http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/" + id
+    const deleteUrl = "https://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/" + id
     
     const options = {
         method: "DELETE"
@@ -56,7 +57,7 @@ export async function destroy(id){
 }
 
 export async function update(registro){
-    const updateUrl = "http://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/" + registro.id
+    const updateUrl = "https://bulkingcutting-production.up.railway.app/bulkingcutting/api/registrocalorico/" + registro.id
 
     const options = {
         method: "PUT",
