@@ -11,7 +11,7 @@ export default function RegistroRow({ registro }) {
             <span>{registro.tipo}</span>
             <span>{registro.descricao}</span>
             <span>{registro.data}</span>
-            <span>{registro.calorias}</span>
+            <span>{registro.calorias} kcal</span>
             <BasicMenu registro={registro} />
         </div>
     );
