@@ -12,6 +12,7 @@ const NavBar = ({active})=>{
           <li> <Link href='/objetivo' className={active=="objetivo"&&"text-slate-500"}>Objetivo</Link></li>
           <li> <Link href='/registro' className={active=="registro"&&"text-slate-500"}>Registro Calorico</Link></li>
           <li> <Link href='/resultado' className={active=="resultado"&&"text-slate-500"}>Resultados</Link></li>
+          <li> <Link href='/login' className={active=="login"&&"text-slate-500"}>Login</Link></li>
         </ul>
         <div className='h-14 w-14 rounded-full overflow-hidden '>
           <img src='https://i.pravatar.cc/100' alt='avatar' />
